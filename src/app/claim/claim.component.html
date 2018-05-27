@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row"> 
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2"> 
+      <form [formGroup]="claimForm" (ngSubmit)="onSubmit()" >
+        <div class="formGroup">
+        <label for="policyNumber">PolicyNumber</label>
+        <input type="text"
+               id="policyNumber" 
+               class="form-control"
+               formControlName="policyNumber"> 
+        <span *ngIf="!claimForm.get('policyNumber').valid && claimForm.get('policyNumber').touched"
+        class="help-block">
+          Please enter a policyNumber
+        </span>
+        </div>
+        <div class="formGroup">
+            <label for="policyNumber">First Name</label>
+            <input type="text"
+                   id="firstName" 
+                   class="form-control"
+                   formControlName="firstName"> 
+                  <span *ngIf="!claimForm.get('firstName').valid && claimForm.get('firstName').touched"
+                  class="help-block">
+                    Please enter first name
+                  </span>
+        </div>
+        <div class="formGroup">
+            <label for="lastName">lastName</label>
+            <input type="text"
+                   id="lastName" 
+                   class="form-control"
+                   formControlName="lastName"> 
+            <span *ngIf="!claimForm.get('lastName').valid && claimForm.get('lastName').touched" 
+            class="help-block">Please enter last Name</span>
+        </div>
+        <div class="formGroup">
+            <label for="dateOfLoss">Date of Loss</label>
+            <input type="date"
+                   id="dateOfLoss" 
+                   class="form-control"
+                   formControlName="dateOfLoss"> 
+            <span *ngIf="!claimForm.get('dateOfLoss').valid && claimForm.get('dateOfLoss').touched"
+            class="help-block">
+              Please enter Date of Loss
+            </span>
+        </div>
+        <div class="formGroup">
+            <label for="lossDetailDescription">Loss Detail Description</label>
+            <input type="textarea"
+                   id="lossDetailDescription" 
+                   class="form-control"
+                   formControlName="lossDetailDescription"> 
+        </div>
+        <button class="btn btn-primary" type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  </div>
